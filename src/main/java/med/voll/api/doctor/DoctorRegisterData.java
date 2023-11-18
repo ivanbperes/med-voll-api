@@ -8,5 +8,4 @@ public record DoctorRegisterData(
         String crm,
         Specialization especialidade,
         AddressData endereco) {
-
 }

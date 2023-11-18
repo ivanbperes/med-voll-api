@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @RestController
-@RequestMapping("/what-time-is-it")
+@RequestMapping("what-time-is-it")
 public class TimeAndDateController {
 
     @GetMapping
