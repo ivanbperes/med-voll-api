@@ -7,6 +7,5 @@ public record AlumnusData(
         String course,
         String classEntry,
         boolean employedOnTheField,
-        GraduationData graduationData
-) {
+        GraduationData graduationData) {
 }
