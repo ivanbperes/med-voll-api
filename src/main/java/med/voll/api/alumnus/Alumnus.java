@@ -17,6 +17,7 @@ public class Alumnus {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String contact;
     private String course;
     private String classEntry;
     private boolean employedOnTheField;
@@ -27,6 +28,7 @@ public class Alumnus {
 
     public Alumnus(AlumnusData data) {
         this.name = data.name();
+        this.contact = data.contact();
         this.course = data.course();
         this.classEntry = data.classEntry();
         this.employedOnTheField = data.employedOnTheField();

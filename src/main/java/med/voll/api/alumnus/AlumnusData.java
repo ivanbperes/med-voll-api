@@ -9,6 +9,8 @@ public record AlumnusData(
         @NotBlank
         String name,
         @NotBlank
+        String contact,
+        @NotBlank
         String course,
         @NotBlank
         @Pattern(regexp = "\\d{4}")
