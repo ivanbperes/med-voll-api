@@ -1,6 +1,4 @@
-package med.voll.api.controller;
-
-import med.voll.api.alumnus.GraduationData;
+package med.voll.api.alumnus;
 
 public record AlumnusData(
         String name,
