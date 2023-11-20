@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import jakarta.validation.Valid;
 import med.voll.api.alumnus.Alumnus;
 import med.voll.api.alumnus.AlumnusData;
 import med.voll.api.alumnus.AlumnusRepository;
@@ -19,7 +20,7 @@ public class AlumnusController {
 
     @PostMapping
     @Transactional
-    public void register(@RequestBody AlumnusData data) {
+    public void register(@RequestBody @Valid AlumnusData data) {
         repository.save(new Alumnus(data));
     }
 }
