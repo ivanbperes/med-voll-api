@@ -13,7 +13,6 @@ public record DoctorRegisterData(
         @NotBlank
         @Email
         String email,
-
         @NotBlank
         String telefone,
         @NotBlank
