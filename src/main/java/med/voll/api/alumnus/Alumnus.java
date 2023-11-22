@@ -20,7 +20,7 @@ public class Alumnus {
     private String contact;
     private String course;
     private String classEntry;
-    private boolean employedOnTheField;
+    private Boolean employedOnTheField;
 
     @Embedded
     private Graduation graduation;
@@ -33,5 +33,23 @@ public class Alumnus {
         this.classEntry = data.classEntry();
         this.employedOnTheField = data.employedOnTheField();
         this.graduation = new Graduation(data.graduationData());
+    }
+
+    public void updateData(AlumnusUpdateData data) {
+        if (data.name() != null) {
+            this.name = data.name();
+        }
+
+        if (data.contact() != null) {
+            this.contact = data.contact();
+        }
+
+        if (data.employedOnTheField() != null) {
+            this.employedOnTheField = data.employedOnTheField();
+        }
+
+        if (data.graduation() != null) {
+            this.graduation.updateData(data.graduation());
+        }
     }
 }

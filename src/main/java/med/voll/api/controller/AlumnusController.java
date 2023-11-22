@@ -1,10 +1,7 @@
 package med.voll.api.controller;
 
 import jakarta.validation.Valid;
-import med.voll.api.alumnus.Alumnus;
-import med.voll.api.alumnus.AlumnusData;
-import med.voll.api.alumnus.AlumnusDataList;
-import med.voll.api.alumnus.AlumnusRepository;
+import med.voll.api.alumnus.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,5 +27,12 @@ public class AlumnusController {
     @GetMapping
     public Page<AlumnusDataList> list(@PageableDefault(size = 10, sort = {"classEntry"}) Pageable pagination) {
         return repository.findAll(pagination).map(AlumnusDataList::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void update(@RequestBody @Valid AlumnusUpdateData data) {
+        var alumnus = repository.getReferenceById(data.id());
+        alumnus.updateData(data);
     }
 }

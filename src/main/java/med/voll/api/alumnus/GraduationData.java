@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record GraduationData(
         @NotNull
-        boolean finishedOnTime,
+        Boolean finishedOnTime,
         @NotBlank
         String advisor,
         @NotBlank
